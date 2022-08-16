@@ -3,13 +3,17 @@
 <app-navegacion></app-navegacion>
 <div class="row">
     <div class="col-sm-2">
-        <app-lateral></app-lateral>
+        <app-lateral-administrador *ngIf="user=='administrador'"></app-lateral-administrador>
+        <app-lateral-asistente *ngIf="user=='asistente'"></app-lateral-asistente>
+        <app-lateral-participante *ngIf="user=='participante'"></app-lateral-participante>
+        
     </div>
     <div class="col-sm-10">
       <router-outlet></router-outlet>
+     
     </div>
-    
+  
   </div>
+  <app-pie-pagina></app-pie-pagina>
 
-<app-pie-pagina></app-pie-pagina>
 

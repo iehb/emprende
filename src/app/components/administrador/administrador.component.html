@@ -1,105 +1,233 @@
+<div class="container-fluid">
 
-    <div class="container-fluid">
-
-            <!-- Page Heading -->
+    <!-- Page Heading -->
+        <div class="text-center">
             <br>
-            <h1 class="h3 mb-4 text-gray-800">Gestión de Eventos</h1>
+            <h1 class="h3 mb-4 text-gray-800">Insercción de Eventos</h1>
             <hr>
-            <div class="row" >
-                <div class="col-md-8">
+        </div>   
+    <div class="row" >
+        <div class="col-md-8">
+            <div class="container-fluid">
+                <div class="card-body"  class="form-horizontal">
+                    <div class="card card-body">
+                        <div  >
+                            <div class="card-header py-4">
+                                <h6 class="m-0 font-weight-bold text-primary ">Registro</h6>
 
-                </div>
-                <div class="col-md-4">
-
-               
-                    <div class="card shadow mb-4"  >
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Formulario</h6>
-                        </div>
-                       
-                        <div class="card-body"  class="form-horizontal">
-                       
+                            </div>	
+                        <form #eventoForm="ngForm">   
                             <div class="form-group" >
-                                <label>Nombre evento</label>
-                                <br>
-                                <input type="text" name="nombre">
-                            </div>
+                            <label>Nombre evento</label>
+                            <br>
+                            <input type="text" name="Nombre_Actividad" [(ngModel)]="eventos.Nombre_Actividad" class="form-control" autofocus placeholder="Inserta el nombre del evento">
+                        </div>
 
-                            <div class="form-group">
-                                <label>Fecha</label>
-                                <br>
-                               <input type="date" name="fecha">
-                            </div> 
-                
-                            <div class="form-group">
-                                <label>Hora</label>
-                                <br>
-                                <input type="time" name="hora">
-                            </div>
-                       
-                            <div class="form-group">
-                                <label>Duración</label>
-                                <br>
-                                <input type="text" name="duracion">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Cantidad </label>
-                                <br>
-                                <input type="number" name="cantidad">
-                            </div>
-
-                            <div  class="form-group">
-                                <label>Lugar </label>
-                                <br>
-                                <input type="text" name="nombre" >
-                            </div>
-
-                            <div  class="form-group">
-                                <label>Tipo</label>
-                                <br>
-                             
-                                        <select name="menu">
-                                          <option>Conferencia</option>
-                                          <option>Foro</option>
-                                         <option>Taller</option>
-                                        </select> 
-                                
-                            </div>
-                            
-                            <div  class="form-group">
-                                
-                                <label>Responsable</label>
-                                <br>
-                                <input type="text" name="respon">
-                            </div>
-                             
-                            <div  class="form-group">
-                                <label>Participante</label>
-                                <br>
-                               <input type="text" name="partici">
-                            </div>
-
-                            <div  class="form-group">
-                                <label>Croquis</label>
-                                <br>
-                                <form name="subida-imagenes" type="POST" enctype="multipart/formdata" >
-                                   <input type="file" name="imagen" />
-                                </form>
-                            </div>
-                            <hr>
-                            <div class="form-group" align="right">
-                            <a  class="btn-lg" ><img src="./assets/pics/agregar.png"></a>
-                            <a  class="btn-lg" ><img src="./assets/pics/editar.png"></a>
-                            <a  class="btn-lg"><img src="./assets/pics/eliminar.png"></a>
-                            </div>
-                           
-                        
+                        <div class="form-group" >
+                            <label>Fecha</label>
+                            <br>
+                        <input type="date" name="Fecha_Actividad" [(ngModel)]="eventos.Fecha_Actividad" class="form-control" autofocus placeholder="Fecha de la actividad">
                         </div> 
-                    </div>
+
+                        <div class="form-group">
+                            <label>Hora Inicio</label>
+                            <br>
+                            <input type="time" name="horaI"  [(ngModel)]="eventos.Hora_Inicio" class="form-control" >
+                        </div>
+
+                        <div class="form-group" >
+                            <label>Hora Termino</label>
+                            <br>
+                            <input type="time" name="horaT" [(ngModel)]="eventos.Hora_Termino" class="form-control" >
+                        </div>
+
+                        <div class="form-group" >
+                            <label>Cantidad Asistentes </label>
+                            <br>
+                            <input type="number" name="cantidad" [(ngModel)]="eventos.Cantidad_Asistentes" class="form-control" autofocus >
+                        </div>
+
+                        <div  class="form-group" >
+                            <label>Lugar </label>
+                            <br>
+                            <input type="text" name="nombre" [(ngModel)]="eventos.Lugar" class="form-control"  autofocus placeholder="Inserta el lugar del evento">
+                        </div>
+                    
+                        <div  class="form-group" >
+                            <label>Tipo</label>
+                            <br>
+                            <input type="number" name="tipo" [(ngModel)]="eventos.id_TipoActividad" class="form-control" placeholder="Inserta el tipo de evento 1 2 3 4">
+                        </div>
+                    
+                   
+                        <div  class="form-group" >
+                            
+                            <label> Responsable</label>
+                            <br>
+                            <input type="text" name="respon" [(ngModel)]="eventos.Nombre_Responsable" class="form-control" autofocus placeholder="Inserta el nombre del responsable del evento">
+                        </div>
+                     
+                        <div  class="form-group" >
+                            <label>Participante</label>
+                            <br>
+                        <input type="text" name="partici"  [(ngModel)]="eventos.Nombre_Participante" class="form-control" autofocus placeholder="Inserta el nombre del parcipante">
+                        </div>
+                        
+                        <hr>
+
+                        <div align="center">
+                            <div class="form-group" >
+                                <button class="btn btn-success btn-lg btn-block" (click)="edit ? updateEvento():  saveNewEvento(); eventoForm.resetForm(); ">
+                                    Guardar
+                                </button> 
+                            </div>
+                        </div>                  
+                    </form> 
+                    </div> 
+                   
                 </div>
-                
-             </div>
+            </div>
+        </div>
+           
         </div>
 
+         <div class="col-md-4">
+                <div class="container-fluid">
+                    <div class="card-body"  class="form-horizontal">
+                        <div class="card card-body">
+                        <div  >
+                            <div class="card-header py-4">
+                                <h6 class="m-0 font-weight-bold text-primary  text-center">Visualización</h6>
+                            
+                            </div>
+                            <div class="m-0 font-weight-bold   text-center">
+                                <h3>{{eventos.Nombre_Actividad == '' ? 'Evento' :eventos.Nombre_Actividad}}</h3>
+                            </div>
+
+                            <div>
+                                    <div  class="font-weight-bold">
+                                        <p>Fecha del evento</p>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <p>{{eventos.Fecha_Actividad| date:'dd-MM-yyyy'}}</p>
+                                    </div>
+                                
+                            </div>
+                           
+                            <div>
+                                <div  class="font-weight-bold">
+                                    <p>Hora inicial de evento</p>
+                                </div>
+
+                                <div class="text-center">
+                                    <p> {{eventos.Hora_Inicio== '' ? '00:00:00' :eventos.Hora_Inicio}}</p>
+                                </div>
+                                
+                            </div>
+
+                           <div>
+                                <div  class="font-weight-bold">
+                                    <p>Hora final de evento</p>
+                                </div>
+
+                                <div class="text-center">
+                                    <p> {{eventos.Hora_Termino== '' ? '00:00:00' :eventos.Hora_Termino}}</p>
+                                </div>
+                                  
+                           </div>
+
+                           <div>
+                                <div  class="font-weight-bold">
+                                    <p>Cantidad Asistentes</p>
+                                </div>
+
+                                <div class="text-center">
+                                    <p> {{eventos.Cantidad_Asistentes}}</p>
+                                </div>
+                              
+                           </div>
+
+                           <div>
+                                <div  class="font-weight-bold">
+                                    <p>Lugar de establecimiento</p>
+                                </div>
+
+                                <div class="text-center">
+                                    <p> {{eventos.Lugar== '' ? 'Dolores Hidalgo, C.I.N., Guanajuato' :eventos.Lugar}}</p>
+                                </div>
+                              
+                           </div>
+
+                           <div>
+                                <div  class="font-weight-bold">
+                                    <p>Tipo de evento</p>
+                                    
+                                </div>
+
+                                <div>
+                                  <ul>   
+                                    <ol>1 = Conferencia</ol>
+                                    <ol>2 = Foro</ol>
+                                    <ol>3 = Taller</ol>
+                                    <ol>4 = Panel</ol>
+                                    </ul>     
+                                </div>
+
+                                <div class="text-center">
+                                   <p> {{eventos.id_TipoActividad}}</p>                                
+                                </div>
+                              
+                                
+                           </div>
+
+                           <div>
+                                <div  class="font-weight-bold">
+                                    <p>Responsable</p>
+                                </div>
+
+                                <div class="text-center">
+                                    <p> {{eventos.Nombre_Responsable== '' ? 'Responsable' :eventos.Nombre_Responsable}}</p>
+                                </div>
+                             
+                           </div>
+
+                           <div>
+                                <div  class="font-weight-bold">
+                                    <p>Participante</p>
+                                </div>
+
+                                <div class="text-center">
+                                    <p> {{eventos.Nombre_Participante== '' ? 'Participante' :eventos.Nombre_Participante}}</p>
+                                </div>
+                                
+                           </div>
+                           
+                        </div>
+                    </div> 
+                   
+                </div>
+                <br>
+                    <div class="card card-body" >
+                        <a class="nav-link collapsed" href="/administrador-list" data-target="#collapseTwo"
+                        aria-expanded="true" aria-controls="collapseTwo"  type="button" class="btn btn-primary">
+                            <span>Lista de eventos</span>
+                        </a>  
+                    </div>
+                <br>    
+                    
+                
+            </div>
+    </div>
    
+    </div>   
+
+   
+
+
+
+
+
+
+
+

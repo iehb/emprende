@@ -1,6 +1,6 @@
+import { NuevoComponent } from './components/nuevo/nuevo.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdministradorComponent } from './components/administrador/administrador.component';
@@ -10,8 +10,17 @@ import { LoginComponent } from './components/login/login.component';
 import { NavegacionComponent } from './components/navegacion/navegacion.component';
 import { PiePaginaComponent } from './components/pie-pagina/pie-pagina.component';
 import { RegistroComponent } from './components/registro/registro.component';
-import { LateralComponent } from './components/lateral/lateral.component';
 import { EmprendeComponent } from './components/emprende/emprende.component';
+import { LateralAsistenteComponent } from './components/lateral-asistente/lateral-asistente.component';
+import { LateralParticipanteComponent } from './components/lateral-participante/lateral-participante.component';
+import { LateralAdministradorComponent } from './components/lateral-administrador/lateral-administrador.component';
+import { LateralEvaluadorComponent } from './components/lateral-evaluador/lateral-evaluador.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule,HttpClient } from '@angular/common/http';
+import { AdministradorListComponent } from './components/administrador-list/administrador-list.component';
+import { EventosService } from './services/eventos.service';
+
+
 
 @NgModule({
   declarations: [
@@ -23,14 +32,24 @@ import { EmprendeComponent } from './components/emprende/emprende.component';
     NavegacionComponent,
     PiePaginaComponent,
     RegistroComponent,
-    LateralComponent,
-    EmprendeComponent
+    EmprendeComponent,
+    LateralAsistenteComponent,
+    LateralParticipanteComponent,
+    LateralAdministradorComponent,
+    LateralEvaluadorComponent,
+    NuevoComponent,
+    AdministradorListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+   // {provide: LocationStrategy, useClass: HashLocationStrategy}
+   EventosService 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

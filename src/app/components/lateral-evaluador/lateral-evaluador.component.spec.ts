@@ -1,19 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AdministradorComponent } from './administrador.component';
 
-describe('AdministradorComponent', () => {
-  let component: AdministradorComponent;
-  let fixture: ComponentFixture<AdministradorComponent>;
+import { LateralEvaluadorComponent } from './lateral-evaluador.component';
+
+describe('LateralEvaluadorComponent', () => {
+  let component: LateralEvaluadorComponent;
+  let fixture: ComponentFixture<LateralEvaluadorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdministradorComponent ]
+      declarations: [ LateralEvaluadorComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdministradorComponent);
+    fixture = TestBed.createComponent(LateralEvaluadorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

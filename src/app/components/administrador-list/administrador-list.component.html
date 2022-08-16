@@ -1,0 +1,140 @@
+<hr>
+    <div class="row">
+        <div class="container-fluid" align="center"  *ngFor="let evento of eventos">
+            <div class="row" >
+                <div class="col-md-8">
+                    <div class="d-felx justify-content-between align-items-center card-body">
+                        <div class="col-mf-4">
+                            <div class="card">
+                                <div class="card-header bg-dark d-felx justify-content-between align-items-center" >
+                                    <div class="row" >
+                                        <div class="text-white text-center" >
+                                            <h3 color="white">{{evento.Nombre_Actividad}}</h3>
+                                        </div>
+                                        <div class="row" style="float:right;" >
+                                            <div class="row" style="float:right;width: 50%;" >
+                                                <div class="row"  >
+                                                    <div style="float:right;width: 30%;" >
+                                                        <div>    
+                                                            <a [routerLink]="['/eventos/edit',evento.Id_Actividad]" class="btn btn-primary" >Editar</a>
+                                                        </div>
+                                                    </div>
+                                                    <div style="float:rigt;width: 30%;" >
+                                                        <div>
+                                                            <button class="btn btn-danger" (click)="deleteEvento(evento.Id_Actividad)">
+                                                                    Eliminar
+                                                            </button>      
+                                                        </div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+
+                                        </div>  
+                                    
+                                    </div>
+                                </div>
+                                
+                                <div class="card-body" class="row">
+                                    <div class="card-body"  style="float:left; clear:both; width: 30%;" >
+                                        
+                                        <div style="clear:both;">
+                                            <div style="float:left;" class="font-weight-bold">
+                                                <p>Fecha</p>
+                                            </div>
+                                            <div  style="float:left;" class="text-center"> 
+                                                <p>: {{evento.Fecha_Actividad}}</p>
+                                            </div> 
+                                        </div>
+                        
+                                        <div style="clear:both;">
+                                            <div style="float:left;" class="font-weight-bold">
+                                                <p>Hora Inicial</p>
+                                            </div>
+                                            <div  style="float:left;" class="text-center"> 
+                                                <p>: {{evento.Hora_Inicio}}</p>
+                                            </div> 
+                                        </div>
+                        
+                        
+                                        <div style="clear:both;">
+                                            <div style="float:left;" class="font-weight-bold">
+                                                <p>Hora Termino</p>
+                                            </div>
+                                            <div  style="float:left;" class="text-center"> 
+                                                <p>: {{evento.Hora_Termino}}</p>
+                                            </div> 
+                                        </div>
+                        
+                        
+                                        <div style="clear:both;">
+                                            <div style="float:left;" class="font-weight-bold">
+                                                <p>Cantidad de asistentes</p>
+                                            </div>
+                                            <div  style="float:left;" class="text-center"> 
+                                                <p>: {{evento.Cantidad_Asistentes}}</p>
+                                            </div> 
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body" style="float:left; clear:both; width: 30%;">
+                                        <div style="clear:both;">
+                                            <div style="float:left;" class="font-weight-bold">
+                                                <p>Lugar del Evento</p>
+                                            </div>
+                                            <div  style="float:left;" class="text-center"> 
+                                                <p>: {{evento.Lugar}}</p>
+                                            </div> 
+                                        </div>
+                        
+                        
+                                        <div style="clear:both;">
+                                            <div style="float:left;" class="font-weight-bold">
+                                                <p>Tipo de Evento</p>
+                                            </div>
+                                            <div  style="float:left;" class="text-center"> 
+                                                <p>: {{evento.id_TipoActividad}}</p>
+                                            </div> 
+                                        </div>
+                        
+                        
+                                        <div style="clear:both;">
+                                            <div style="float:left;" class="font-weight-bold">
+                                                <p>Responsable</p>
+                                            </div>
+                                            <div  style="float:left;" class="text-center"> 
+                                                <p>: {{evento.Nombre_Responsable}}</p>
+                                            </div> 
+                                        </div>
+                        
+                        
+                                        <div style="clear:both;">
+                                            <div style="float:left;" class="font-weight-bold">
+                                                <p>Participante</p>
+                                            </div>
+                                            <div  style="float:left;" class="text-center"> 
+                                                <p>: {{evento.Nombre_Participante}}</p>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+        <div>
+            <div class="col-md-2">
+                <div  class=" card-body" >
+                    <a class="nav-link collapsed" href="/administrador" data-target="#collapseTwo"
+                            aria-expanded="true" aria-controls="collapseTwo" class="btn btn-success">
+                            <span>Insertar otro</span>
+                    </a> 
+                </div>
+            </div>
+        </div>
+    </div> 
+
+
